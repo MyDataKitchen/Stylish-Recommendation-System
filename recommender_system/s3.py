@@ -7,8 +7,8 @@ import pandas as pd
 load_dotenv()
 
 s3 = boto3.resource('s3',
-                    aws_access_key_id=os.getenv('s3_access_key_id'),
-                    aws_secret_access_key=os.getenv('s3_secret_access_key'))
+                    aws_access_key_id=os.getenv('S3_ACCESS_KEY_ID'),
+                    aws_secret_access_key=os.getenv('S3_SECRET_ACCESS_KEY'))
 
 def get_json_from_s3(bucket, key):
     obj = s3.Object(bucket, key)
