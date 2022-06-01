@@ -125,9 +125,13 @@ def get_product(category, feature, product_url):
     }
 
     print(id)
-    insert_product(product)
-    insert_product_images(id, images)
-    insert_product_variants(id, sizes)
+    state = insert_product(product)
+    if state != None:
+        insert_product_images(id, images)
+        insert_product_variants(id, sizes)
+    else:
+        pass
+
     return "get_product-Done"
 
 if __name__ == '__main__':
